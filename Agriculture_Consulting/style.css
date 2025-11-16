@@ -34,3 +34,88 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 60%);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+.hero__actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn--primary {
+    background: #388e3c;
+    color: #fff;
+}
+.btn--ghost {
+    background: transparent;
+    border: 2px solid #388e3c;
+    color: #388e3c;
+}
+
+/* Sections */
+.section {
+    margin: 2rem 0;
+}
+.section--alt {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+.section__title {
+    margin-top: 0;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+.card {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+}
+.card__link {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Testimonials */
+.testimonials {
+    display: grid;
+    gap: 1rem;
+}
+.testimonial {
+    border-left: 4px solid #66bb6a;
+    padding: 0.5rem 1rem;
+    background: #ffffff;
+    border-radius: 4px;
+}
+.testimonial cite {
+    display: block;
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+/* Responsive */
+@media (min-width: 700px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+}

@@ -4,26 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Consulting</title>
+    <meta name="description" content="AI consulting for strategy, automation, and data products. Fast ROI with secure, responsible AI.">
+    <meta property="og:title" content="AI Consulting">
+    <meta property="og:description" content="Strategy, automation, and ML solutions that drive measurable outcomes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>AI Consulting Services</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about/about.html">About</a>
+            <a href="services/services.html">Services</a>
+            <a href="contact/contact.html">Contact</a>
+        </nav>
         <p>Expert solutions for your business using Artificial Intelligence</p>
     </header>
     <main>
-        <section>
-            <h2>Our Services</h2>
-            <ul>
-                <li>AI Strategy & Roadmap</li>
-                <li>Machine Learning Solutions</li>
-                <li>Data Analysis & Insights</li>
-                <li>Custom AI Development</li>
-            </ul>
+        <section class="hero hero--dark">
+            <div class="hero__content">
+                <h2>Ship AI that actually moves KPIs</h2>
+                <p>From roadmap to production: strategy, automation, and ML that improve revenue, cut costs, and de‑risk operations.</p>
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="#contact">Book a consult</a>
+                    <a class="btn btn--ghost" href="#usecases">See use cases</a>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>Email: info@aiconsulting.com</p>
+
+        <section class="section" id="usecases">
+            <h3 class="section__title">High‑impact use cases</h3>
+            <div class="cards">
+                <article class="card">
+                    <h4>Knowledge assistant (RAG)</h4>
+                    <p>Private, audited Q&A over your docs and tickets to reduce support time.</p>
+                </article>
+                <article class="card">
+                    <h4>Forecasting & anomaly detection</h4>
+                    <p>Demand forecasts and automated alerts to prevent stockouts and revenue leakage.</p>
+                </article>
+                <article class="card">
+                    <h4>Workflow automation</h4>
+                    <p>Intake triage, summarization, and routing across CRM and back‑office systems.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section--alt">
+            <h3 class="section__title">What clients say</h3>
+            <div class="testimonials">
+                <blockquote class="testimonial">
+                    <p>“We automated ticket responses and cut handling time by 35% in 6 weeks.”</p>
+                    <cite>— VP Support, SaaS</cite>
+                </blockquote>
+                <blockquote class="testimonial">
+                    <p>“Clear roadmap, fast prototypes, and production‑grade security.”</p>
+                    <cite>— CTO, Fintech</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h3 class="section__title">Contact</h3>
+            <p>Tell us about your goals. We’ll reply within one business day.</p>
+            <form method="post" action="#" onsubmit="if(document.getElementById('company_site').value) return false;">
+                <div style="position:absolute; left:-10000px;" aria-hidden="true">
+                    <label for="company_site">Leave this field empty</label>
+                    <input type="text" id="company_site" name="company_site" tabindex="-1">
+                </div>
+                <div>
+                    <label for="name">Name</label><br>
+                    <input id="name" name="name" type="text" required placeholder="Your name" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
+                </div>
+                <div>
+                    <label for="email">Work email</label><br>
+                    <input id="email" name="email" type="email" required placeholder="you@company.com" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
+                </div>
+                <div>
+                    <label for="message">What are you looking to build?</label><br>
+                    <textarea id="message" name="message" rows="5" required placeholder="Brief description" style="width:100%; padding:0.5rem; margin:0.25rem 0;"></textarea>
+                </div>
+                <button class="btn btn--primary" type="submit">Send</button>
+            </form>
+            <p style="margin-top:1rem; color:#555;">Or email: sample@email.com</p>
         </section>
     </main>
     <footer>

@@ -18,8 +18,31 @@
     </header>
     <main>
         <h2>Get in Touch</h2>
-        <p>Email: info@agricultureconsulting.com</p>
-        <p>Phone: (555) 123-4567</p>
+        <p>Fill out the form and we’ll respond within one business day.</p>
+        <form method="post" action="#" onsubmit="if(document.getElementById('website').value) return false;">
+            <div style="position:absolute; left:-10000px;" aria-hidden="true">
+                <label for="website">Leave this field empty</label>
+                <input type="text" id="website" name="website" tabindex="-1">
+            </div>
+            <div>
+                <label for="name">Name</label><br>
+                <input id="name" name="name" type="text" required placeholder="Your full name" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
+            </div>
+            <div>
+                <label for="email">Email</label><br>
+                <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
+            </div>
+            <div>
+                <label for="phone">Phone (optional)</label><br>
+                <input id="phone" name="phone" type="tel" placeholder="(000) 123-4567" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
+            </div>
+            <div>
+                <label for="message">How can we help?</label><br>
+                <textarea id="message" name="message" rows="5" required placeholder="Briefly describe your needs" style="width:100%; padding:0.5rem; margin:0.25rem 0;"></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit">Send message</button>
+        </form>
+        <p style="margin-top:1rem; color:#555;">Prefer email or phone? <br>Email: sample@email.com · Phone: (000) 123-4567</p>
     </main>
     <footer>
         <p>&copy; 2025 Agriculture Consulting. All rights reserved.</p>
