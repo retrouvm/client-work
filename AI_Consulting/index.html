@@ -68,27 +68,83 @@
 
         <section class="section" id="contact">
             <h3 class="section__title">Contact</h3>
-            <p>Tell us about your goals. We’ll reply within one business day.</p>
-            <form method="post" action="#" onsubmit="if(document.getElementById('company_site').value) return false;">
+            <p>Tell us about your goals. We'll reply within one business day.</p>
+            <div id="form-message-home" style="display:none; padding:1rem; margin:1rem 0; border-radius:4px;"></div>
+            <form id="contact-form-home" method="post" action="/api/contact">
                 <div style="position:absolute; left:-10000px;" aria-hidden="true">
-                    <label for="company_site">Leave this field empty</label>
-                    <input type="text" id="company_site" name="company_site" tabindex="-1">
+                    <label for="company_site_home">Leave this field empty</label>
+                    <input type="text" id="company_site_home" name="company_site" tabindex="-1">
                 </div>
                 <div>
-                    <label for="name">Name</label><br>
-                    <input id="name" name="name" type="text" required placeholder="Your name" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
+                    <label for="name_home">Name</label><br>
+                    <input id="name_home" name="name" type="text" required placeholder="Your name" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
                 </div>
                 <div>
-                    <label for="email">Work email</label><br>
-                    <input id="email" name="email" type="email" required placeholder="you@company.com" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
+                    <label for="email_home">Work email</label><br>
+                    <input id="email_home" name="email" type="email" required placeholder="you@company.com" style="width:100%; padding:0.5rem; margin:0.25rem 0;">
                 </div>
                 <div>
-                    <label for="message">What are you looking to build?</label><br>
-                    <textarea id="message" name="message" rows="5" required placeholder="Brief description" style="width:100%; padding:0.5rem; margin:0.25rem 0;"></textarea>
+                    <label for="message_home">What are you looking to build?</label><br>
+                    <textarea id="message_home" name="message" rows="5" required placeholder="Brief description" style="width:100%; padding:0.5rem; margin:0.25rem 0;"></textarea>
                 </div>
-                <button class="btn btn--primary" type="submit">Send</button>
+                <button class="btn btn--primary" type="submit" id="submit-btn-home">Send</button>
             </form>
             <p style="margin-top:1rem; color:#555;">Or email: sample@email.com</p>
+            <script>
+                document.getElementById('contact-form-home').addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Honeypot check
+                    if(document.getElementById('company_site_home').value) {
+                        return false;
+                    }
+                    
+                    const form = e.target;
+                    const submitBtn = document.getElementById('submit-btn-home');
+                    const messageDiv = document.getElementById('form-message-home');
+                    
+                    // Convert form to JSON
+                    const formData = new FormData(form);
+                    const formDataObj = Object.fromEntries(formData);
+                    
+                    // Disable submit button
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    messageDiv.style.display = 'none';
+                    
+                    try {
+                        const response = await fetch('/api/contact', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(formDataObj)
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (response.ok && data.success) {
+                            messageDiv.style.display = 'block';
+                            messageDiv.style.backgroundColor = '#d4edda';
+                            messageDiv.style.color = '#155724';
+                            messageDiv.style.border = '1px solid #c3e6cb';
+                            messageDiv.textContent = data.message || 'Thank you for your message! We\'ll get back to you soon.';
+                            form.reset();
+                        } else {
+                            throw new Error(data.error || 'Failed to send message');
+                        }
+                    } catch (error) {
+                        messageDiv.style.display = 'block';
+                        messageDiv.style.backgroundColor = '#f8d7da';
+                        messageDiv.style.color = '#721c24';
+                        messageDiv.style.border = '1px solid #f5c6cb';
+                        messageDiv.textContent = 'Sorry, there was an error sending your message. Please try again or email us directly.';
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send';
+                    }
+                });
+            </script>
         </section>
     </main>
     <footer>
