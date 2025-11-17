@@ -5,7 +5,7 @@ This project contains two static website skeletons:
 - `Agriculture_Consulting/`
 - `AI_Consulting/`
 
-Each site includes: `index.html`, `about/about.html`, `services/services.html`, `contact/contact.html`, and a shared `style.css` per site. Pages are lightweight, mobile‑friendly, and designed for easy customization.
+Each site includes: `index.html`, `about/about.html`, `services/services.html`, and a shared `style.css` per site. Pages are lightweight, mobile‑friendly, and designed for easy customization. These are static showcase sites with no contact forms or data collection.
 
 ---
 
@@ -13,9 +13,8 @@ Each site includes: `index.html`, `about/about.html`, `services/services.html`, 
 
 ### Agriculture_Consulting
 - `index.html`: Home page with hero, CTAs, services preview cards, and testimonials. Includes basic SEO meta tags.
-- `about/about.html`: Bio (“Who Am I”), FAQ, and Credentials. Add certifications, partner logos, and photos.
-- `services/services.html`: Three service cards with bullet points and a CTA to contact.
-- `contact/contact.html`: Contact form (name, email, phone, message) with a hidden honeypot to reduce spam. Action is a placeholder.
+- `about/about.html`: Bio ("Who Am I"), FAQ, and Credentials. Add certifications, partner logos, and photos.
+- `services/services.html`: Three service cards with bullet points showcasing consulting capabilities.
 - `style.css`: Global styles for hero, buttons, cards, testimonials, sections, and responsive grid.
 
 Customization tips
@@ -25,10 +24,9 @@ Customization tips
 - Update footer text and year as needed.
 
 ### AI_Consulting
-- `index.html`: Dark hero with CTAs, high‑impact use cases, testimonials, and an inline contact form (with honeypot). Basic SEO meta tags.
-- `about/about.html`: “Who We Are,” FAQ (regulated industries, engagement model), and Credentials.
-- `services/services.html`: Service cards (Strategy, RAG Assistant, Forecasting/Automation) and CTA to contact.
-- `contact/contact.html`: Contact form (name, email, message) with honeypot. Action is a placeholder.
+- `index.html`: Dark hero with CTAs, high‑impact use cases, and testimonials. Basic SEO meta tags.
+- `about/about.html`: "Who We Are," FAQ (regulated industries, engagement model), and Credentials.
+- `services/services.html`: Service cards (Strategy, RAG Assistant, Forecasting/Automation) showcasing consulting capabilities.
 - `style.css`: Styles for hero variants, cards, testimonials, and responsive grid.
 
 Customization tips
@@ -36,19 +34,6 @@ Customization tips
 - Duplicate `article.card` blocks to add more use cases or services.
 - Add security/compliance notes (SOC2/HIPAA/ISO) if relevant.
 - Update `<title>` and `<meta name="description">` on the home page (and add OG image if desired).
-
----
-
-## Making the Contact Forms Work
-
-The forms are static by default. Choose one of these wiring options:
-
-- Formspree/Getform: Set `<form action="https://formspree.io/f/yourid" method="POST">` and follow provider docs. Add a redirect with a hidden `_redirect` field if desired.
-- Netlify Forms: Host on Netlify and add `name="contact"` and `netlify` to the `<form>` element; optionally add `netlify-honeypot`.
-- Serverless email: Use AWS Lambda + SES, Vercel Functions, or Netlify Functions. Point the form `action` to your function endpoint.
-- CRM embed: Replace the `<form>` markup with your CRM’s embed (HubSpot, Zoho, etc.) for direct lead capture.
-
-Keep the honeypot input present but visually hidden—it helps reduce bot submissions.
 
 ---
 
@@ -64,7 +49,6 @@ Keep the honeypot input present but visually hidden—it helps reduce bot submis
 1. Create a Netlify account.
 2. Drag the `Agriculture_Consulting/` or `AI_Consulting/` folder into Netlify, or connect the Git repo.
 3. Netlify auto‑deploys and provides a URL + free SSL.
-4. Use Netlify Forms if you want native form handling.
 
 ### 3) Vercel (Git connect, previews)
 1. Import the repo into Vercel.
@@ -73,8 +57,8 @@ Keep the honeypot input present but visually hidden—it helps reduce bot submis
 
 ### 4) Website Builders (Wix, Squarespace, GoDaddy, Canva)
 Two approaches:
-- Rebuild with builder blocks: Create pages (Home, About, Services, Contact), use hero/cards/testimonials/form blocks, and paste the copy from these HTML files. This yields easier non‑technical editing.
-- Embed custom HTML: Use the builder’s HTML/Embed widget to insert code snippets from these files. Prefer the builder’s native form blocks for easy submissions and spam protection.
+- Rebuild with builder blocks: Create pages (Home, About, Services), use hero/cards/testimonials blocks, and paste the copy from these HTML files. This yields easier non‑technical editing.
+- Embed custom HTML: Use the builder's HTML/Embed widget to insert code snippets from these files.
 
 ### 5) AWS S3 + CloudFront (static, fast, low cost)
 1. Create an S3 bucket and enable static website hosting.
