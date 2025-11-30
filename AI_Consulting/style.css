@@ -416,6 +416,49 @@ main {
     border-bottom: none;
 }
 
+/* Content paragraphs for educational sections */
+.content-paragraph {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-paragraph p {
+    color: #d0d0d0;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.content-paragraph p:last-of-type {
+    margin-bottom: 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    font-size: 0.9rem;
+}
+
+.content-paragraph em {
+    color: var(--tech-cyan);
+    font-style: normal;
+}
+
+.content-paragraph a {
+    color: var(--tech-cyan);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.content-paragraph a:hover {
+    color: var(--tech-purple);
+    text-decoration: none;
+}
+
 .card p {
     color: #d0d0d0;
     line-height: 1.6;
