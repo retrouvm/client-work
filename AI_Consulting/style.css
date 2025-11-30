@@ -459,6 +459,42 @@ main {
     text-decoration: none;
 }
 
+/* Banner section for about page */
+.banner-section {
+    width: 100%;
+    margin: 0 auto 3rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.2);
+    border: 2px solid var(--glass-border);
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+@media (min-width: 1000px) {
+    .banner-image {
+        max-height: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner-section {
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+    
+    .banner-image {
+        max-height: 350px;
+    }
+}
+
 .card p {
     color: #d0d0d0;
     line-height: 1.6;
