@@ -32,7 +32,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Dark overlay for readability - lighter on left to show person */
+/* Dark overlay for readability - uniform across screen */
 body::before {
     content: '';
     position: fixed;
@@ -40,11 +40,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, 
-        rgba(5, 10, 6, 0.3) 0%, 
-        rgba(5, 10, 6, 0.4) 30%,
-        rgba(13, 27, 15, 0.6) 60%,
-        rgba(13, 27, 15, 0.75) 100%);
+    background: rgba(13, 27, 15, 0.6);
     z-index: 0;
     pointer-events: none;
 }
@@ -163,7 +159,7 @@ header nav a:hover {
 
 main {
     padding: 2rem 1rem;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 2rem auto;
     margin-left: auto;
     margin-right: auto;
@@ -171,19 +167,21 @@ main {
     z-index: 10;
 }
 
-/* On larger screens, shift content right to avoid covering person */
+/* Center content on all screen sizes */
 @media (min-width: 1024px) {
     main {
-        margin-left: 40%;
-        margin-right: 5%;
-        max-width: 800px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem 2rem;
     }
 }
 
 @media (min-width: 1400px) {
     main {
-        margin-left: 45%;
-        margin-right: 5%;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -557,7 +555,7 @@ footer {
     margin-top: 3rem;
 }
 
-/* Nature grid pattern overlay - very subtle, lighter on left */
+/* Nature grid pattern overlay - uniform across screen */
 body::after {
     content: '';
     position: fixed;
@@ -577,10 +575,9 @@ body::after {
             rgba(76, 175, 80, 0.015) 49px,
             rgba(76, 175, 80, 0.015) 50px);
     background-size: 50px 50px;
-    opacity: 0.4;
+    opacity: 0.3;
     z-index: 1;
     pointer-events: none;
-    mask: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 100%);
 }
 
 /* Responsive */
