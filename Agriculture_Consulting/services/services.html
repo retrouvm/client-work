@@ -26,8 +26,48 @@
     </header>
     <main>
         <h2>Agricultural Consulting Services</h2>
-        <div class="cards">
-            <article class="card">
+        <style>
+            .services-cards-wide {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+            .services-card-wide {
+                flex: 1 1 40%;
+                min-width: 350px;
+                max-width: 500px;
+                box-sizing: border-box;
+                border: 2px solid #111;
+                border-radius: 1rem;
+                padding: 2rem 1.25rem 1.5rem 1.25rem;
+                margin: 0.5rem 0;
+                color: #171f15;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                background-color: var(--service-green, #4f6746);
+                transition: transform .13s;
+            }
+            .services-card-wide h3 {
+                margin-top: 0;
+                font-size: 1.4rem;
+                color: #101d12;
+                letter-spacing: 0.02em;
+            }
+            .services-card-wide ul {
+                margin-top: 0.75rem;
+                margin-bottom: 0;
+                padding-left: 1.3rem;
+                color: #151d13;
+            }
+            .services-card-wide:hover {
+                transform: translateY(-3px) scale(1.02);
+                box-shadow: 0 8px 20px rgba(31,61,45,0.13);
+            }
+        </style>
+        <div class="services-cards-wide">
+
+            <article class="services-card-wide" style="--service-green:#48684b;">
                 <h3>Sustainable Agriculture & Farming</h3>
                 <p>Expert guidance on sustainable farming practices, crop management, soil health, and agricultural development strategies.</p>
                 <ul>
@@ -38,7 +78,8 @@
                     <li>Farm management and optimization</li>
                 </ul>
             </article>
-            <article class="card">
+
+            <article class="services-card-wide" style="--service-green:#386049;">
                 <h3>Forest Conservation & Environmental Advocacy</h3>
                 <p>Comprehensive consulting on forest conservation, environmental protection, and advocacy strategies for natural resource preservation.</p>
                 <ul>
@@ -49,7 +90,8 @@
                     <li>Public awareness and education campaigns</li>
                 </ul>
             </article>
-            <article class="card">
+
+            <article class="services-card-wide" style="--service-green:#537055;">
                 <h3>Botanical Gardens & Horticulture</h3>
                 <p>Specialized consulting on botanical garden management, plant conservation, horticultural practices, and educational programming.</p>
                 <ul>
@@ -60,7 +102,8 @@
                     <li>Garden design and maintenance planning</li>
                 </ul>
             </article>
-            <article class="card">
+
+            <article class="services-card-wide" style="--service-green:#37582f;">
                 <h3>Fisheries & Aquaculture Development</h3>
                 <p>Expert consulting on fisheries management, aquaculture development, and sustainable aquatic resource management in Ghana.</p>
                 <ul>
@@ -71,7 +114,8 @@
                     <li>Fisheries policy and regulation guidance</li>
                 </ul>
             </article>
-            <article class="card">
+
+            <article class="services-card-wide" style="--service-green:#456442;">
                 <h3>Agricultural Education & Training</h3>
                 <p>Comprehensive educational programs and training workshops on sustainable agriculture, environmental stewardship, and agricultural best practices.</p>
                 <ul>
@@ -82,7 +126,8 @@
                     <li>Community engagement and awareness programs</li>
                 </ul>
             </article>
-            <article class="card">
+
+            <article class="services-card-wide" style="--service-green:#29543e;">
                 <h3>Environmental Documentation & Media</h3>
                 <p>Professional documentation services including documentary filmmaking, photography, and media production for environmental and agricultural projects.</p>
                 <ul>
@@ -116,13 +161,18 @@
             
             <div class="image-gallery">
                 <div class="gallery-item">
-                    <img src="../agri_media/walkway_with_landscaping.JPG" alt="Botanical garden walkway" loading="lazy">
+                    <img src="../agri_media/Saturday vegeys 001.JPG" alt="Saturday vegetables market" loading="lazy">
                     <div class="gallery-item-credit">
-                        <span>Botanical Garden Walkway</span>
+                        <span>Saturday Vegetables Market</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../agri_media/Saturday vegeys 007.JPG" alt="Fresh vegetables" loading="lazy">
+                    <div class="gallery-item-credit">
+                        <span>Fresh Vegetables</span>
                     </div>
                 </div>
             </div>
-        </section>
 
         <section class="section">
             <h3 class="section__title">Achimota Forest Conservation Services</h3>
@@ -147,6 +197,35 @@
             <h3 class="section__title">Sustainable Agriculture Practices</h3>
             <p style="text-align: center; margin-bottom: 2rem; color: var(--agri-emerald);">Promoting Sustainable Farming and Food Systems</p>
             
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="../agri_media/Plastics can be used more sustainably in agriculture.png" alt="Plastics can be used more sustainably in agriculture" loading="lazy">
+                    <div class="gallery-item-credit">
+                        <span>
+                            Plastics can be used more sustainably in agriculture<br>
+                            <a href="https://www.linkedin.com/pulse/practice-sustainable-agriculture-ashish-nigam" target="_blank" rel="noopener">Source</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../agri_media/Sustainable agricultural practices contribute significantly to One Health.jpg" alt="Sustainable agricultural practices contribute significantly to One Health" loading="lazy">
+                    <div class="gallery-item-credit">
+                        <span>
+                            Sustainable agricultural practices contribute significantly to One Health<br>
+                            <a href="https://www.nature.com/articles/s43247-023-00982-4" target="_blank" rel="noopener">Source</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../agri_media/The practice of sustainable agriculture.jpg" alt="The practice of sustainable agriculture" loading="lazy">
+                    <div class="gallery-item-credit">
+                        <span>
+                            The practice of sustainable agriculture<br>
+                            <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/sae2.12019" target="_blank" rel="noopener">Source</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     
