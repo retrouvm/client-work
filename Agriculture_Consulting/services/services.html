@@ -25,23 +25,47 @@
         </nav>
     </header>
     <main>
-        <h2>Agricultural Consulting Services</h2>
+        <h2 style="text-align: center;">Agricultural Consulting Services</h2>
         <style>
-            .services-cards-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-                justify-items: stretch;
+            .services-cards-center-wrapper {
+                display: flex;
+                justify-content: center;
+                width: 100%;
                 margin-bottom: 2rem;
             }
-            @media (max-width: 900px) {
+            .services-cards-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem 2.5rem;
+                justify-items: stretch;
+                align-items: stretch;
+                width: 100%;
+                max-width: 1300px;
+            }
+            @media (max-width: 1200px) {
                 .services-cards-grid {
+                    max-width: 1000px;
+                }
+            }
+            @media (max-width: 1050px) {
+                .services-cards-grid {
+                    max-width: 740px;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media (max-width: 800px) {
+                .services-cards-center-wrapper {
+                    padding: 0 1rem;
+                }
+                .services-cards-grid {
+                    max-width: 500px;
                     grid-template-columns: 1fr;
+                    gap: 2rem;
                 }
             }
             .services-card-wide {
                 min-width: 0;
-                max-width: 500px;
+                max-width: 390px;
                 box-sizing: border-box;
                 border: 2px solid #111;
                 border-radius: 1rem;
@@ -72,79 +96,81 @@
                 box-shadow: 0 8px 20px rgba(31,61,45,0.13);
             }
         </style>
-        <div class="services-cards-grid">
+        <div class="services-cards-center-wrapper">
+            <div class="services-cards-grid">
 
-            <article class="services-card-wide" style="--service-green:#48684b;">
-                <h3>Sustainable Agriculture & Farming</h3>
-                <p>Expert guidance on sustainable farming practices, crop management, soil health, and agricultural development strategies.</p>
-                <ul>
-                    <li>Sustainable farming practice implementation</li>
-                    <li>Crop planning and management strategies</li>
-                    <li>Soil health assessment and improvement</li>
-                    <li>Agricultural education and training programs</li>
-                    <li>Farm management and optimization</li>
-                </ul>
-            </article>
+                <article class="services-card-wide" style="--service-green:#48684b;">
+                    <h3>Sustainable Agriculture & Farming</h3>
+                    <p>Expert guidance on sustainable farming practices, crop management, soil health, and agricultural development strategies.</p>
+                    <ul>
+                        <li>Sustainable farming practice implementation</li>
+                        <li>Crop planning and management strategies</li>
+                        <li>Soil health assessment and improvement</li>
+                        <li>Agricultural education and training programs</li>
+                        <li>Farm management and optimization</li>
+                    </ul>
+                </article>
 
-            <article class="services-card-wide" style="--service-green:#386049;">
-                <h3>Forest Conservation & Environmental Advocacy</h3>
-                <p>Comprehensive consulting on forest conservation, environmental protection, and advocacy strategies for natural resource preservation.</p>
-                <ul>
-                    <li>Forest conservation planning and strategies</li>
-                    <li>Environmental advocacy and community engagement</li>
-                    <li>Documentation and reporting on conservation efforts</li>
-                    <li>Policy development and government engagement</li>
-                    <li>Public awareness and education campaigns</li>
-                </ul>
-            </article>
+                <article class="services-card-wide" style="--service-green:#386049;">
+                    <h3>Forest Conservation & Environmental Advocacy</h3>
+                    <p>Comprehensive consulting on forest conservation, environmental protection, and advocacy strategies for natural resource preservation.</p>
+                    <ul>
+                        <li>Forest conservation planning and strategies</li>
+                        <li>Environmental advocacy and community engagement</li>
+                        <li>Documentation and reporting on conservation efforts</li>
+                        <li>Policy development and government engagement</li>
+                        <li>Public awareness and education campaigns</li>
+                    </ul>
+                </article>
 
-            <article class="services-card-wide" style="--service-green:#537055;">
-                <h3>Botanical Gardens & Horticulture</h3>
-                <p>Specialized consulting on botanical garden management, plant conservation, horticultural practices, and educational programming.</p>
-                <ul>
-                    <li>Botanical garden management and planning</li>
-                    <li>Plant conservation and preservation strategies</li>
-                    <li>Horticultural best practices</li>
-                    <li>Educational program development</li>
-                    <li>Garden design and maintenance planning</li>
-                </ul>
-            </article>
+                <article class="services-card-wide" style="--service-green:#537055;">
+                    <h3>Botanical Gardens & Horticulture</h3>
+                    <p>Specialized consulting on botanical garden management, plant conservation, horticultural practices, and educational programming.</p>
+                    <ul>
+                        <li>Botanical garden management and planning</li>
+                        <li>Plant conservation and preservation strategies</li>
+                        <li>Horticultural best practices</li>
+                        <li>Educational program development</li>
+                        <li>Garden design and maintenance planning</li>
+                    </ul>
+                </article>
 
-            <article class="services-card-wide" style="--service-green:#37582f;">
-                <h3>Fisheries & Aquaculture Development</h3>
-                <p>Expert consulting on fisheries management, aquaculture development, and sustainable aquatic resource management in Ghana.</p>
-                <ul>
-                    <li>Fisheries management and conservation</li>
-                    <li>Aquaculture development strategies</li>
-                    <li>Sustainable fishing practices</li>
-                    <li>Aquatic resource assessment</li>
-                    <li>Fisheries policy and regulation guidance</li>
-                </ul>
-            </article>
+                <article class="services-card-wide" style="--service-green:#37582f;">
+                    <h3>Fisheries & Aquaculture Development</h3>
+                    <p>Expert consulting on fisheries management, aquaculture development, and sustainable aquatic resource management in Ghana.</p>
+                    <ul>
+                        <li>Fisheries management and conservation</li>
+                        <li>Aquaculture development strategies</li>
+                        <li>Sustainable fishing practices</li>
+                        <li>Aquatic resource assessment</li>
+                        <li>Fisheries policy and regulation guidance</li>
+                    </ul>
+                </article>
 
-            <article class="services-card-wide" style="--service-green:#456442;">
-                <h3>Agricultural Education & Training</h3>
-                <p>Comprehensive educational programs and training workshops on sustainable agriculture, environmental stewardship, and agricultural best practices.</p>
-                <ul>
-                    <li>Workshop development and delivery</li>
-                    <li>Training programs for farmers and agricultural workers</li>
-                    <li>Educational tours and field programs</li>
-                    <li>Curriculum development for agricultural education</li>
-                    <li>Community engagement and awareness programs</li>
-                </ul>
-            </article>
+                <article class="services-card-wide" style="--service-green:#456442;">
+                    <h3>Agricultural Education & Training</h3>
+                    <p>Comprehensive educational programs and training workshops on sustainable agriculture, environmental stewardship, and agricultural best practices.</p>
+                    <ul>
+                        <li>Workshop development and delivery</li>
+                        <li>Training programs for farmers and agricultural workers</li>
+                        <li>Educational tours and field programs</li>
+                        <li>Curriculum development for agricultural education</li>
+                        <li>Community engagement and awareness programs</li>
+                    </ul>
+                </article>
 
-            <article class="services-card-wide" style="--service-green:#29543e;">
-                <h3>Environmental Documentation & Media</h3>
-                <p>Professional documentation services including documentary filmmaking, photography, and media production for environmental and agricultural projects.</p>
-                <ul>
-                    <li>Documentary film production</li>
-                    <li>Environmental photography and videography</li>
-                    <li>Media strategy and public relations</li>
-                    <li>Documentation of conservation efforts</li>
-                    <li>Educational video and multimedia content</li>
-                </ul>
-            </article>
+                <article class="services-card-wide" style="--service-green:#29543e;">
+                    <h3>Environmental Documentation & Media</h3>
+                    <p>Professional documentation services including documentary filmmaking, photography, and media production for environmental and agricultural projects.</p>
+                    <ul>
+                        <li>Documentary film production</li>
+                        <li>Environmental photography and videography</li>
+                        <li>Media strategy and public relations</li>
+                        <li>Documentation of conservation efforts</li>
+                        <li>Educational video and multimedia content</li>
+                    </ul>
+                </article>
+            </div>
         </div>
 
         <section class="section section--alt">
